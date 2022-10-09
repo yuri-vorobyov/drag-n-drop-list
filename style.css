@@ -1,0 +1,16 @@
+ul {
+  background-color: bisque;
+  list-style-type: none;
+  padding: 1rem;
+  max-width: 50ch;
+  margin: auto;
+}
+
+li {
+  margin: 0.6rem;
+  background-color: rgba(245, 245, 220, 0.7);
+  user-select: none;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #222;
+}
