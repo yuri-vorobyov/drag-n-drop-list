@@ -108,7 +108,17 @@ function swapChildren(parent, indexD, indexB) {
 
 function dragStop(event) {
   window.removeEventListener("mousemove", dragging);
-  draggedData.element.style.removeProperty("left");
-  draggedData.element.style.removeProperty("top");
   draggedData.element.classList.remove("grabbed");
+  draggedData.element.classList.add("flying-back");
+  draggedData.element.style.left = "0px";
+  draggedData.element.style.top = "0px";
+  draggedData.element.addEventListener(
+    "transitionend",
+    () => {
+      draggedData.element.classList.remove("flying-back");
+      draggedData.element.style.removeProperty("left");
+      draggedData.element.style.removeProperty("top");
+    },
+    { once: true }
+  );
 }
